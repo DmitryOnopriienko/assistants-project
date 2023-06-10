@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Assistants</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container">
+                <div class="header__logo logo">
+                    <img src="img/logo.svg" alt="logo">
+                    <a href="./index" class="logo__title">
+                        <span>Assistants</span>
+                        <span>допомога стартапам</span>
+                    </a>
+                </div>
+                <div class="menu">
+                    <div class="header__actions">
+                        <a href="./services">Послуги</a>
+                        <a href="#" class="header__email">assistants.for.startups@gmail.com</a>
+                    </div>
+                    <button class="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="slogan">
+                <div class="slogan__title">
+                    <h1>Assistants</h1>
+                    <p>Ваша ідея - наша допомога у реалізації</p>
+                </div>
+            </section>
+            <section class="who">
+                <div class="who__container">
+                    <h2 class="who__title title">Хто ми?</h2>
+                <p class="who__subtitle">Ми - компанія молодих людей, яка допомагає стартапам на важкому шляху становлення. Кожен з нас - професіонал у своїй сфері. Ми даємо ідеям життя завдяки нашим навичкам та бажанню робити щось нове, розробляти незвичайні проекти та розвивати креативні думки.</p>
+                </div>
+            </section>
+            <section class="help">
+                <div class="help__title">
+                    <h2 class="title">Чим ми допомагаємо?</h2>
+                </div>
+                <div class="help__container">
+                    <article th:each="assistance : ${assistanceList}" class="help__item item">
+                        <div class="item__icon">
+                            <img th:src="'./img/'+${assistance.photoFileName}" alt="menegment">
+                        </div>
+                        <p class="item__title" th:text="${assistance.title}">Assistance title</p>
+                        <p class="item__subtitle" th:text="${assistance.description}">Description</p>
+                    </article>
+                </div>
+            </section>
+            <section class="team">
+                <div class="team__container">
+                    <h2 class="team__title title">Наша команда</h2>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <article th:each="worker : ${workers}" class="swiper-slide team__member member">
+                                <div class="member__img">
+                                    <img th:src="'./img/'+${worker.photoFilename}" alt="">
+                                </div>
+                                <h2 class="member__title" th:text="${worker.name}+' '+${worker.surname}">Worker name</h2>
+                                <p class="member__subtitle" th:text="${worker.jobTitle}">Job title</p>
+                            </article>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="contact">
+                <h2 class="contact__title title">Бажаєте працювати разом?</h2>
+                <a href="#" class="contact__link link">Зв’язатись з нами</a>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__column">
+                    <p>Автор дизайну: Дмитро Онопрієнко</p>
+                    <p>LinkedIn: <a href="#">link</a></p>
+                    <p>Github: <a href="#">link </a></p>
+                    <p>Залікова книжка: <a href="#">link</a></p>
+                </div>
+                <div class="footer__column">
+                    <p>Пошта: <a href="#">assistants.for.startups@gmail.com</a></p>
+                    <p>Офіс у Києві: вул. Хрещатик, 15</p>
+                    <p>Телефон: +38 050 123 45 67</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
