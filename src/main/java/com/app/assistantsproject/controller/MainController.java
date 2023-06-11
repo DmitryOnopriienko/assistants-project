@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class MainController {
@@ -20,7 +21,7 @@ public class MainController {
     this.productService = productService;
   }
 
-  @GetMapping("/index")
+  @GetMapping({"/", "/index"})
   public String index(Model model) {
     model.addAttribute("workers", indexPageService.getWorkers());
     model.addAttribute("assistanceList", indexPageService.getAssistance());
@@ -34,8 +35,9 @@ public class MainController {
     return "services";
   }
 
-  @GetMapping("/info")
-  public String info() {
+  @GetMapping("/info/{id}")
+  public String info(@PathVariable int id, Model model) {
+    model.addAttribute("product", productService.getProductById(id));
     return "info";
   }
 }

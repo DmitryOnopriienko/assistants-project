@@ -32,6 +32,12 @@ public class Product {
   @Column(name = "short_description")
   private String shortDescription;
 
+  @Column(name = "inner_description")
+  private String innerDescription;
+
+  @Column(name = "assistance_list")
+  private String assistanceList;
+
   public enum Type {
     MAIN,
     ADDITIONAL

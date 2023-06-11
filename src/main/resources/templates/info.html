@@ -16,7 +16,7 @@
             <div class="header__container">
                 <div class="header__logo logo">
                     <img src="/img/logo.svg" alt="logo">
-                    <a href="./index" class="logo__title">
+                    <a href="/index" class="logo__title">
                         <span>Assistants</span>
                         <span>допомога стартапам</span>
                     </a>
@@ -37,26 +37,15 @@
         <div class="main">
             <section class="info">
                 <div class="info__container">
-                    <a href="./services" class="info__link">Назад до сторінки усіх послуг</a>
+                    <a href="/services" class="info__link">Назад до сторінки усіх послуг</a>
                     <p class="info__title">Послуга:</p>
-                    <h2 class="title">Допомога+</h2>
+                    <h2 class="title" th:text="${product.title}">Title</h2>
                     <div>
                         <img class="info__illustraion2" src="/img/infoIllustration2.svg" alt="">
                     </div>
-                    <p class="info__desc">В цьому пакеті послуг ми надаємо весь спектр допомоги вашому стартапу:</p>
-                    <ul class="info__list">
-                        <li>Регулярні консультації з нашими спеціалістами</li>
-                        <li>Повний аналіз ринку</li>
-                        <li>Перегляд бізнес плану та його редагування</li>
-                        <li>Розробка власного бренду</li>
-                        <li>Визначення правильної маркетингової стратегії</li>
-                        <li>Запуск рекламної кампанії</li>
-                        <li>Планування фінансів</li>
-                        <li>Продакт та проджект менеджмент</li>
-                        <li>Допомога щодо розподілення людських ресурсів та найму спеціалістів</li>
-                        <li>Залучення інвесторів</li>
-                    </ul>
-                    <p class="info__price">Вартість послуги: <span>$1800/міс</span></p>
+                    <p class="info__desc" th:text="${product.innerDescription}">Description</p>
+                    <ul class="info__list" th:utext="${product.assistanceList}"></ul>
+                    <p class="info__price">Вартість послуги: <span th:text="${product.price}">Price</span></p>
                 </div>
                 <img class="info__illustraion1" src="/img/infoIllustration.svg" alt="">
             </section>
