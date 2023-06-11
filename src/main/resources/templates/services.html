@@ -8,14 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <title>Assistants</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div class="wrapper">
         <header class="header">
             <div class="header__container">
                 <div class="header__logo logo">
-                    <img src="img/logo.svg" alt="logo">
+                    <img src="/img/logo.svg" alt="logo">
                     <a href="./index" class="logo__title">
                         <span>Assistants</span>
                         <span>допомога стартапам</span>
@@ -39,54 +39,14 @@
                 <div class="main-products__container">
                     <h2 class="main-products__title title">Наші послуги</h2>
                     <div class="main-products__cards">
-<!--                        -->
-
                         <article th:each="i : ${#numbers.sequence(0, 2)}" class="main-products__card card-products">
                             <h2 class="card-products__title" th:text="${mainProducts[i].title}">Title</h2>
                             <p class="card-products__text" th:text="${mainProducts[i].shortDescription}">Description</p>
                             <div class="card-products__bottom">
                                 <div class="card-products__btn  card-products__price" th:classappend="'card-products__btn-'+${i+1}" th:text="${mainProducts[i].price}">Price</div>
-<!--                                <div th:class="'card-products__btn  card-products__price card-products__btn-'+${i}" th:text="${mainProducts[i].price}">Price</div>-->
                                 <a href="./info" class="card-products__btn  card-products__more" th:classappend="'card-products__btn-'+${i+1}">Детальніше</a>
                             </div>
                         </article>
-
-<!--                        -->
-
-<!--                        <article th:each="product : ${mainProducts}" class="main-products__card card-products">-->
-<!--                            <h2 class="card-products__title" th:text="${product.title}">Product title</h2>-->
-<!--                            <p class="card-products__text" th:text="${product.shortDescription}">Description</p>-->
-<!--                            <div class="card-products__bottom">-->
-<!--                                <div class="card-products__btn  card-products__price card-products__btn-1">$900/міс</div>-->
-<!--                                <a href="./info.html" class="card-products__btn card-products__more card-products__btn-1">Детальніше</a>-->
-<!--                            </div>-->
-<!--                        </article>-->
-
-<!--                        -->
-<!--                        <article class="main-products__card card-products">-->
-<!--                            <h2 class="card-products__title">Маркетингове просування</h2>-->
-<!--                            <p class="card-products__text">Оберемо правильну стратегію просування, допоможемо зрозуміти цільову аудиторію, налаштуємо таргет-рекламу</p>-->
-<!--                            <div class="card-products__bottom">-->
-<!--                                <div class="card-products__btn  card-products__price card-products__btn-1">$900/міс</div>-->
-<!--                                <a href="./info.html" class="card-products__btn card-products__more card-products__btn-1">Детальніше</a>-->
-<!--                            </div>-->
-<!--                        </article>-->
-<!--                        <article class="main-products__card card-products">-->
-<!--                            <h2 class="card-products__title">Допомога з плануванням</h2>-->
-<!--                            <p class="card-products__text">Сплануємо фінанси, правильно розподілимо людські ресурси, дамо вам пораду щодо команди та набору професіоналів, організуємо проджект та продакт менеджмент</p>-->
-<!--                            <div class="card-products__bottom">-->
-<!--                                <div class="card-products__btn  card-products__price card-products__btn-2">$1200/міс</div>-->
-<!--                                <a href="./info.html" class="card-products__btn card-products__more card-products__btn-2">Детальніше</a>-->
-<!--                            </div>-->
-<!--                        </article>-->
-<!--                        <article class="main-products__card card-products">-->
-<!--                            <h2 class="card-products__title">Маркетингове просування</h2>-->
-<!--                            <p class="card-products__text">Оберемо правильну стратегію просування, допоможемо зрозуміти цільову аудиторію, налаштуємо таргет-рекламу</p>-->
-<!--                            <div class="card-products__bottom">-->
-<!--                                <div class="card-products__btn  card-products__price card-products__btn-3">$1800/міс</div>-->
-<!--                                <a href="./info.html" class="card-products__btn card-products__more card-products__btn-3">Детальніше</a>-->
-<!--                            </div>-->
-<!--                        </article>-->
                     </div>
                 </div>
             </section>
@@ -129,6 +89,6 @@
     </div>
     
     
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
